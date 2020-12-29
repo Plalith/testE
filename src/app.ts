@@ -25,10 +25,6 @@ const knex = Knex({
 Model.knex(knex);
 
 
-
-
-
-
 // *************************  Orders   *****************
 app.post("/createOrder", async (req, res) => {
     Order.query().insert(req.body).then((result: any) => {

@@ -1,4 +1,5 @@
 import { Model, Modifiers } from 'objection'
+import Customer from './customer'
 
 export default class Order extends Model {
     id!: number
@@ -18,4 +19,14 @@ export default class Order extends Model {
             weight: { type: 'integer' },
         },
     }
+    static relationMappings = {
+        owner: {
+          relation: Model.BelongsToOneRelation,
+          modelClass: Customer,
+          join: {
+            from: 'Orders.customerID',
+            to: 'Customers.id'
+          }
+        }
+      };
 }
