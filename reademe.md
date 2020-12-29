@@ -4,8 +4,8 @@ npm install
 
 npm run dev (for dev)
 
-npm run dev (convert typescript to js in dist folder)
+npm run build (convert typescript to js in dist folder)
 
-cd dist node app.js
+npm start
 
 api docuentaion in http://localhost:3000
